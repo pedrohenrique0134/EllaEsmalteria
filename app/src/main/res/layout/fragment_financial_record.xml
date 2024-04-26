@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".uis.FinancialRecordFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText,UselessParent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ella_esmalteria"
+            android:textSize="24sp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/brown"
+            android:fontFamily="@font/roboto_condensed"
+            android:layout_weight="80"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_registro"
+            android:layout_marginEnd="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_registro_financeiro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:textSize="26sp"
+        android:fontFamily="@font/roboto_condensed"
+        android:text="Registro Financeiro"/>
+
+    <LinearLayout
+        android:id="@+id/ll_spinners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_registro_financeiro"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="70"
+            android:paddingBottom="1dp"
+            app:hintTextColor="@color/black"
+            android:hint="Movimentações">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="30"
+            android:layout_marginStart="10dp"
+            app:hintTextColor="@color/black"
+            android:hint="Mês">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ll_spinners"
+        android:backgroundTint="@android:color/transparent"
+        >
+        <LinearLayout
+            android:id="@+id/btn_buscar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:background="@drawable/shape_btn">
+            <TextView
+                android:id="@+id/txt_novo_lance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Buscar"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="6dp"
+                android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lancamentos"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_below="@id/card_btn"
+        android:layout_marginTop="20dp"
+        tools:listitem="@layout/item_movimentacoes"
+        tools:itemCount="5"
+        android:visibility="gone"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <TextView
+        android:id="@+id/aviso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_below="@id/rv_lancamentos"
+        android:gravity="center"
+        android:visibility="gone"
+        android:fontFamily="@font/roboto_condensed"
+        android:text="Ainda não existe lancamentos para esse mês!"/>
+
+    <LinearLayout
+        android:id="@+id/ll_entre_saida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rv_lancamentos"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_entrdas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:background="@drawable/shape_lls"
+            android:layout_weight="50"
+            >
+            <TextView
+                android:id="@+id/receive_entrdas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed"
+                android:text="Entrdas:"/>
+            <ImageView
+                android:id="@+id/img_entradas"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/invisivel"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_saidas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:background="@drawable/shape_lls"
+            android:layout_weight="50">
+            <TextView
+                android:id="@+id/receive_saidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed"
+                android:textColor="@color/red"
+                android:text="Saidas:"/>
+            <ImageView
+                android:id="@+id/img_saidas"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/invisivel"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_lancamentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_btn"
+        android:visibility="gone"
+        android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:id="@+id/subOptionsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/mainFab"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/btn_new_entry"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_btn_entry_exit"
+            android:paddingHorizontal="10dp"
+            android:text="Nova Entrada"
+            android:fontFamily="@font/roboto_black"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/btn_new_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_btn_entry_exit"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_black"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:text="Nova Saida" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mainFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/brown"
+        android:src="@drawable/round_add_white_24"
+        app:tint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:onClick="onMainFabClick"/>
+
+</RelativeLayout>

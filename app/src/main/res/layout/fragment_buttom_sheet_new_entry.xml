@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    tools:context=".uis.ButtomSheetNewEntryFragment">
+
+    <TextView
+        android:id="@+id/txt_new_saida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nova Entrada"
+        android:textSize="22sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_condensed"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txt_nome_nova_entrada"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_new_saida"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nome_nova_entrada"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Nome"
+            android:imeOptions="actionNext"
+            android:includeFontPadding="false"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_valor_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_nome_nova_entrada"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_valor_new_saida"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/valor_new_entrada"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:inputType="number"
+                android:focusable="true"
+                android:imeOptions="actionNext"
+                android:focusableInTouchMode="true"
+                android:hint="Valor"
+                android:includeFontPadding="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_data"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_email"
+            android:layout_marginStart="20dp"
+            android:layout_weight="50"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/data_new_entrada"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:imeOptions="actionNext"
+                android:inputType="date"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Data"
+                android:includeFontPadding="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_radio_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ll_valor_data"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/entra_din"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinheiro"/>
+            <RadioButton
+                android:id="@+id/entra_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Cartão"/>
+            <RadioButton
+                android:id="@+id/entra_pix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Pix"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_radio_buttons"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_weight="20">
+            <LinearLayout
+                android:id="@+id/btn_cancelar_collaborator"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:background="@drawable/shape_btn_cancelar">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="6dp"
+                    android:textColor="@color/red"
+                    android:gravity="center"
+                    android:text="Cancelar"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_weight="80">
+            <LinearLayout
+                android:id="@+id/btn_cadastrar_collaborator"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:background="@drawable/shape_btn">
+                <ProgressBar
+                    android:id="@+id/progress_novo_lance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/txt_novo_lance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Salvar"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="6dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</RelativeLayout>

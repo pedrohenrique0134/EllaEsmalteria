@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeScreenFragment">
+
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.app.ellaeamalteriasistemadelancamentos.uis.HomeScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_financialRecordFragment"
+            app:destination="@id/financialRecordFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_cadastroClienteFragment"
+            app:destination="@id/cadastroClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/financialRecordFragment"
+        android:name="com.app.ellaeamalteriasistemadelancamentos.uis.FinancialRecordFragment"
+        android:label="fragment_financial_record"
+        tools:layout="@layout/fragment_financial_record" >
+        <action
+            android:id="@+id/action_financialRecordFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroClienteFragment"
+        android:name="com.app.ellaeamalteriasistemadelancamentos.uis.CadastroClienteFragment"
+        android:label="fragment_cadastro_cliente"
+        tools:layout="@layout/fragment_cadastro_cliente" >
+        <action
+            android:id="@+id/action_cadastroClienteFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+</navigation>

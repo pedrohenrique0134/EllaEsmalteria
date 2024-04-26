@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".uis.HomeScreenFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText,UselessParent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ella_esmalteria"
+            android:textSize="24sp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/brown"
+            android:fontFamily="@font/roboto_condensed"
+            android:layout_weight="80"/>
+
+        <ImageView
+            tools:ignore="Suspicious0dp"
+            android:id="@+id/settings"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/settings"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_weight="20"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        android:text="Profissionais"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/brown"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        android:layout_marginHorizontal="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecione para entrar"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_light"
+                android:textSize="20sp"/>
+
+            <ProgressBar
+                android:id="@+id/progress_colaborators"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/txt_msg_sem_colaborador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:text="Não há coloboradores cadastrados!"/>
+
+            <Button
+                android:id="@+id/btn_get_botton_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/brown"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="50dp"
+                android:visibility="gone"
+                android:text="Cadastrar"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_collaborators"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                tools:listitem="@layout/item_users"
+                />
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
