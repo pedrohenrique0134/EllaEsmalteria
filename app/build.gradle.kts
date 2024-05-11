@@ -82,5 +82,8 @@ dependencies {
     //Picasso
     implementation(libs.picasso)
 
+    //Glide
+    implementation(libs.glide)
+
 
 }

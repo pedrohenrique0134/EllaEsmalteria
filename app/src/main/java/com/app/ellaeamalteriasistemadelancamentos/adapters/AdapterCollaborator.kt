@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.ellaeamalteriasistemadelancamentos.R
 import com.app.ellaeamalteriasistemadelancamentos.databinding.ItemUsersBinding
 import com.app.ellaeamalteriasistemadelancamentos.models.Collaborators
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 
 class AdapterCollaborator(var context: Context,
@@ -21,7 +23,8 @@ class AdapterCollaborator(var context: Context,
             RecyclerView.ViewHolder(binding.root){
                 fun bind(collaborators: Collaborators){
                     binding.userName.text = collaborators.nome
-                    Picasso.get().load(collaborators.foto).into(binding.imgCollaborator)
+                    Glide.with(context).load(collaborators.foto).error(R.drawable.avatar).into(binding.imgCollaborator)
+                    //Picasso.get().load(collaborators.foto).error(R.drawable.avatar).into(binding.imgCollaborator)
                     binding.llBox.setOnClickListener {
                         clickUser.clickUser(collaborators)
                     }

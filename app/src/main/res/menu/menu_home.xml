@@ -14,4 +14,10 @@
         android:icon="@drawable/round_add_24"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_cliente"
+        android:title="Clientes"
+        android:icon="@drawable/round_add_24"
+        app:showAsAction="never" />
+
 </menu>

@@ -3,6 +3,7 @@ package com.app.ellaeamalteriasistemadelancamentos.uis
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ import com.app.ellaeamalteriasistemadelancamentos.utils.show
 import com.app.ellaeamalteriasistemadelancamentos.utils.spinnerFunText
 import com.app.ellaeamalteriasistemadelancamentos.utils.toast
 import com.app.ellaeamalteriasistemadelancamentos.viewModels.ViewModelLancamentos
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -243,7 +245,10 @@ class FinancialRecordFragment : Fragment() {
     private fun getInfo() {
         nome = requireArguments().getString("nome").toString()
         foto = requireArguments().getString("foto").toString()
-        Picasso.get().load(foto).into(binding.imageRegistro)
+        //Teste de image
+        Log.d("TAG", "Photo: $foto")
+        Glide.with(requireContext()).load(foto).error(R.drawable.avatar).into(binding.imageRegistro)
+        //Picasso.get().load(foto).into(binding.imageRegistro)
         binding.txtRegistroFinanceiro.text = "Registro Finaceiro $nome"
     }
 

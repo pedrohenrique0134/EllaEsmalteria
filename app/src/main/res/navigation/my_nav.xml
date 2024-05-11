@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_cadastroClienteFragment"
             app:destination="@id/cadastroClienteFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_clientesFragment"
+            app:destination="@id/clientesFragment" />
     </fragment>
     <fragment
         android:id="@+id/financialRecordFragment"
@@ -33,6 +36,15 @@
         tools:layout="@layout/fragment_cadastro_cliente" >
         <action
             android:id="@+id/action_cadastroClienteFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clientesFragment"
+        android:name="com.app.ellaeamalteriasistemadelancamentos.uis.ClientesFragment"
+        android:label="fragment_clientes"
+        tools:layout="@layout/fragment_clientes" >
+        <action
+            android:id="@+id/action_clientesFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>

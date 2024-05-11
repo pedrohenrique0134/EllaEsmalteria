@@ -73,6 +73,12 @@ class HomeScreenFragment : Fragment(), AdapterCollaborator.ClickUser {
                     )
                     true
                 }
+                R.id.action_cliente ->{
+                    findNavController().navigate(
+                        R.id.action_homeScreenFragment_to_clientesFragment
+                    )
+                    true
+                }
 
                 else -> true
             }
